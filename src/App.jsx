@@ -1,4 +1,4 @@
-import  React,{ useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 // ============================================================
 // DATA LAYER — Topics & Content
@@ -722,7 +722,7 @@ const PROVIDERS = {
     errorMsg: "Anthropic keys begin with sk-ant-",
   },
   gemini: {
-    id: "gemini", label: "Google", sublabel: "Gemini 3.1 Flash",
+    id: "gemini", label: "Google", sublabel: "Gemini 1.5 Flash",
     placeholder: "AIza...",
     hint: "Free key at aistudio.google.com — no credit card needed",
     accentColor: "#4a9eff",
@@ -1280,7 +1280,7 @@ function SyntaxAnatomy({ topic, apiKey, provider, onAnalysisComplete }) {
 
       } else {
         // ---- Google Gemini ----
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent?key=${apiKey}`;
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
         const res = await fetch(geminiUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
